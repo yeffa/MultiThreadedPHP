@@ -9,11 +9,11 @@ class Processes
         $this->processClass = $processClass;
     }
 
-    public function run(int $processesCount): void
+    public function run(string $taskUrl, int $processesCount): void
     {
         $processes = [];
         while ($processesCount) {
-            $processes[] = new ($this->processClass)("php task.php");
+            $processes[] = new ($this->processClass)("php $taskUrl");
             $processesCount--;
         }
         array_walk($processes, function (Process $process) {
