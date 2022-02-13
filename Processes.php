@@ -9,7 +9,7 @@ class Processes
         $this->processClass = $processClass;
     }
 
-    public function run($processesCount)
+    public function run(int $processesCount): void
     {
         $processes = [];
         while ($processesCount) {
